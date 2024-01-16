@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Numpuz Game</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="board"></div>
+        <div id="output">
+            <label for="outputText">Movimientos:</label>
+            <textarea id="outputText" readonly></textarea>
+            <div id="movesCounter">Movimientos: <span id="movesCount">0</span></div> //checkar
+        </div>        
+    </div>
+    <button onclick="solvePuzzle()">Resolver Puzzle</button>
+    <button onclick="resetAndClear()">Reiniciar</button>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
