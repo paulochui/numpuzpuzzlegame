@@ -9,16 +9,80 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="board"></div>
-        <div id="output">
-            <label for="outputText">Movimientos:</label>
-            <textarea id="outputText" readonly></textarea>
-            <div id="movesCounter">Movimientos: <span id="movesCount">0</span></div> //checkar
-        </div>        
+   <div class="tit">
+    <h1>HOMBRE - MÁQUINA</h1>
+   </div>
+    <div class="bubbles">
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:27;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:29;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:28;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:29;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:10;"></span>
     </div>
-    <button onclick="solvePuzzle()">Resolver Puzzle</button>
-    <button onclick="resetAndClear()">Reiniciar</button>
+    
+    <div class="background"></div>
+    <div class="content">
+    <div id="container">
+            <div id="board"></div>
+            <div id="output">
+                <label ><h4>Espacio de estados:</h4></label>   <br>
+                <textarea id="outputText" readonly></textarea> <br>  <br>        
+                <label id="movesCounter"><h4>Contador: <span id="movesCount">0</h4></span></label><br>
+            </div>        
+        </div><br>
+        <button onclick="solvePuzzle()">Resolver Puzzle</button>
+        <button onclick="resetAndClear()">Reiniciar</button>
+
+        
+    </div>
     <script src="scripts.js"></script>
 </body>
 

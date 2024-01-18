@@ -36,7 +36,7 @@ console.log('Elemento de contador de movimientos:', movesCounterElement);
                 updateOutputText(`Movimiento: ${currentState[tileIndex]} hacia el espacio vacío.`);
         
                 // Incrementa el contador de movimientos
-                moveCounter++;
+                //moveCounter++;
         
                 // Actualiza el contador de movimientos en el HTML
                 movesCounterElement.textContent = moveCounter;
@@ -114,7 +114,7 @@ console.log('Elemento de contador de movimientos:', movesCounterElement);
                             state: nextState,
                             g: current.g + 1,
                             h: heuristic(nextState, targetState),
-                            moves: [...current.moves, `Move ${nextState[emptyIndex]} to empty space`]
+                            moves: [...current.moves, `Mover ${nextState[emptyIndex]} al espacio vacío`]
                         });
                         closedSet.add(neighborStateString);
                     }
@@ -157,6 +157,7 @@ console.log('Elemento de contador de movimientos:', movesCounterElement);
                     swapTiles(tileIndex, emptyIndex);
                     renderBoard(currentState);
                     i++;
+                    updateMovesCounter(moveCounter + 1);
                 } else {
                     clearInterval(intervalId);
                     if (isSolved(currentState)) {

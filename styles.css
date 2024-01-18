@@ -1,21 +1,87 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#output label {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     font-family: 'Arial', sans-serif;
+    padding: 0;
+    min-height: 100vh;
+    background: #000000;
+    overflow: hidden;
 }
 
 #container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tit{
+    color: #fff;
+    text-align: center;
+    padding: 20px; 
+    margin: 0;
+    position: fixed;
+    top: 10px;
+}
+.bubbles{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    display: flex;
 }
 
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(144, 144, 245);
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgb(144, 144, 245), 
+    0 0 50px rgb(144, 144, 245),
+    0 0 100px rgb(144, 144, 245);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: rgb(217, 176, 255);
+    box-shadow: 0 0 0 10px rgb(217, 176, 255), 
+    0 0 50px rgb(217, 176, 255),
+    0 0 100px rgb(217, 176, 255);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
 #board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    
 }
 
 .tile {
@@ -24,17 +90,108 @@ body {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    background-color: #eee;
+    background-color: #000;
     cursor: pointer;
     user-select: none;
     transition: background-color 0.3s;
+    box-shadow: 0 0 0 3px rgb(217, 176, 255), 
+    0 0 30px rgb(217, 176, 255),
+    0 0 10px rgb(217, 176, 255);
+    color: #fff;
 }
 
 #output {
-    margin-left: 20px;
+    margin-left: 50px;
+    position: relative;
+    margin-top: 40px;
+
+
 }
 
 #outputText {
     width: 300px;
     height: 200px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgb(217, 176, 255), 
+    0 0 30px rgb(217, 176, 255),
+    0 0 10px rgb(217, 176, 255);
+    scrollbar-color: rgb(217, 176, 255) #000;
+    scrollbar-track-color: #000;
+}
+
+#outputText::-webkit-scrollbar {
+    width: 12px;
+}
+
+#outputText::-webkit-scrollbar-thumb {
+    background-color: rgb(217, 176, 255);
+}
+
+#outputText::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+button{
+    --glow-color: rgb(217, 176, 255);
+   --glow-spread-color: rgba(191, 122, 255, 0.781);
+    --enhanced-glow-color: rgb(252, 252, 252);
+    --btn-color:  rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--enhanced-glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .5em var(--glow-color),
+    0 0 .5em .1em var(--glow-spread-color),
+    inset 0 0 .2em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    align-items: center;
+    margin-left: 90px;
+}
+
+button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+button:hover {
+    color: var(--enhanced-glow-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+
+}
+
+button:active {
+    box-shadow: 0 0 6em .25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 .5em .25em var(--glow-color);
+}
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #fff;
+    align-items: center;
+
 }
